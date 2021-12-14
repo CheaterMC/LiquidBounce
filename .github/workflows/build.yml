@@ -26,4 +26,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: liquidbounce
-          path: build/libs/LiquidBounce.jar
+          path: build/libs/LiquidBounce-2.0.jar
