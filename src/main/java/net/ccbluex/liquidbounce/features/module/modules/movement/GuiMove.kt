@@ -23,7 +23,7 @@ import net.minecraft.client.settings.GameSettings
 class GuiMove : Module() {
 
     val noDetectableValue = BoolValue("NoDetectable", false)
-    val aacValue = BoolValue("AAC", false)
+    val aacAdditionProValue = BoolValue("AAC", false)
     val noMoveClicksValue = BoolValue("NoMoveClicks", false)
 
     @EventTarget
@@ -61,5 +61,5 @@ class GuiMove : Module() {
     }
 
     override val tag: String?
-        get() = if (aacValue.get()) "AAC" else null
+        get() = if (aacAdditionProValue.get()) "AAC" else null
 }
