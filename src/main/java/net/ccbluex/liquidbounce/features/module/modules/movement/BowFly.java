@@ -34,7 +34,7 @@ import net.minecraft.util.BlockPos;
 import java.awt.Color;
 
 @ModuleInfo(name = "BowFly", spacedName = "Bow Fly", description = "Allows you to jump further with auto bow shoot.", category = ModuleCategory.MOVEMENT)
-public class BowFly extends Module {
+public class BowJump extends Module {
 
     private final FloatValue boostValue = new FloatValue("Boost", 4.25F, 0F, 10F);
     private final FloatValue heightValue = new FloatValue("Height", 0.42F, 0F, 5F);
@@ -180,7 +180,7 @@ public class BowFly extends Module {
             return "Waiting for damage...";
             case 3:
             case 4:
-            return "Boost";
+            return "Boosted.";
             default:
             return "Task completed.";
         }
