@@ -20,7 +20,7 @@ import net.minecraft.client.gui.inventory.GuiContainer
 import net.minecraft.client.settings.GameSettings
 
 @ModuleInfo(name = "InvMove", spacedName = "Inv Move", description = "Allows you to walk while an inventory is opened.", category = ModuleCategory.MOVEMENT)
-class InvMove : Module() {
+class GuiMove : Module() {
 
     val noDetectableValue = BoolValue("NoDetectable", false)
     val aacValue = BoolValue("AAC", false)
