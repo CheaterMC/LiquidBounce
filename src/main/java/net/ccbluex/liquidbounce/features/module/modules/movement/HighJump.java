@@ -1,7 +1,7 @@
 /*
- * LiquidBounce+ Hacked Client
+ * LiquidBounce Hacked Client
  * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge.
- * https://github.com/WYSI-Foundation/LiquidBouncePlus/
+ * https://github.com/CheaterMC/LiquidBounce/
  */
 package net.ccbluex.liquidbounce.features.module.modules.movement;
 
@@ -25,7 +25,7 @@ import net.minecraft.util.BlockPos;
 public class HighJump extends Module {
 
     private final FloatValue heightValue = new FloatValue("Height", 2F, 1.1F, 10F);
-    private final ListValue modeValue = new ListValue("Mode", new String[] {"Vanilla", "Damage", "AACv3", "DAC" ,"Mineplex", "MatrixWater"}, "Vanilla");
+    private final ListValue modeValue = new ListValue("Mode", new String[] {"Vanilla", "Damage", "AACv3", "DAC", "Mineplex", "MatrixWater"}, "Vanilla");
     private final BoolValue glassValue = new BoolValue("OnlyGlassPane", false);
 
     public int tick;
