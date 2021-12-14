@@ -1,7 +1,7 @@
 /*
- * LiquidBounce+ Hacked Client
+ * LiquidBounce Hacked Client
  * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge.
- * https://github.com/WYSI-Foundation/LiquidBouncePlus/
+ * https://github.com/CheaterMC/LiquidBounce/
  */
 package net.ccbluex.liquidbounce.features.module.modules.combat
 
@@ -42,7 +42,7 @@ class Velocity : Module() {
     private val verticalValue = FloatValue("Vertical", 0F, 0F, 1F)
     private val horizontalExplosionValue = FloatValue("HorizontalExplosion", 0F, 0F, 1F)
     private val verticalExplosionValue = FloatValue("VerticalExplosion", 0F, 0F, 1F)
-    private val modeValue = ListValue("Mode", arrayOf("Cancel", "Simple", "AACv4", "AAC4Reduce", "AAC5Reduce", "AAC5.2.0", "AAC", "AACPush", "AACZero",
+    private val modeValue = ListValue("Mode", arrayOf("Cancel", "Simple", "AAC4.4.0", "AAC4Reduce", "AAC5Reduce", "AAC5.2.0", "AAC", "AACPush", "AACZero",
             "Reverse", "SmoothReverse", "Jump", "Glitch", "Phase", "Matrix", "Legit"), "Simple")
 
     private val aac5KillAuraValue = BoolValue("AAC5.2.0-Attack-Only", true, { modeValue.get().equals("aac5.2.0", true) })
@@ -85,8 +85,11 @@ class Velocity : Module() {
     private var jump = false
 
     override val tag: String
-        get() = modeValue.get()
-
+        get() = if(modeValue.get() == "Simple")
+            "${horizontalValue.get()}% ${verticalValue.get()}%"
+        else
+            modeValue.get()
+            
     override fun onDisable() {
         mc.thePlayer?.speedInAir = 0.02F
     }
@@ -124,7 +127,7 @@ class Velocity : Module() {
                     velocityInput = false
             }
 
-            "aacv4" -> {
+            "aac4.4.0" -> {
                 if (!mc.thePlayer.onGround) {
                     if (velocityInput) {
                         mc.thePlayer.speedInAir = 0.02f
@@ -268,7 +271,7 @@ class Velocity : Module() {
                     packet.motionZ = (packet.getMotionZ() * 0.6).toInt()
                 }
 
-                "aac", "aac5reduce", "reverse", "aacv4", "smoothreverse", "aaczero" -> velocityInput = true
+                "aac", "aac5reduce", "reverse", "aac4.4.0", "smoothreverse", "aaczero" -> velocityInput = true
 
                 "aac5.2.0" -> {
                     event.cancelEvent()
@@ -356,7 +359,7 @@ class Velocity : Module() {
                 if (!mc.thePlayer.isCollidedVertically)
                     event.cancelEvent()
             }
-            "aacv4" -> {
+            "aac4.4.0" -> {
                 if (mc.thePlayer.hurtTime > 0) {
                     event.cancelEvent()
                 }
