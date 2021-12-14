@@ -1,7 +1,7 @@
 /*
- * LiquidBounce+ Hacked Client
+ * LiquidBounce Hacked Client
  * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge.
- * https://github.com/WYSI-Foundation/LiquidBouncePlus/
+ * https://github.com/CheaterMC/LiquidBounce/
  */
 package net.ccbluex.liquidbounce.features.module
 
@@ -55,7 +55,7 @@ class ModuleManager : Listenable {
                 Fly::class.java,
                 ClickGUI::class.java,
                 HighJump::class.java,
-                GuiMove::class.java,
+                InvMove::class.java,
                 NoSlow::class.java,
                 LiquidWalk::class.java,
                 Strafe::class.java,
@@ -157,7 +157,7 @@ class ModuleManager : Listenable {
                 ItemTeleport::class.java,
                 Teleport::class.java,
                 AsianHat::class.java,
-                BowJump::class.java,
+                BowFly::class.java,
                 ConsoleSpammer::class.java,
                 PointerESP::class.java,
                 SafeWalk::class.java,
