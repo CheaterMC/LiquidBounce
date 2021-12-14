@@ -1,7 +1,7 @@
 /*
- * LiquidBounce+ Hacked Client
+ * LiquidBounce Hacked Client
  * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge.
- * https://github.com/WYSI-Foundation/LiquidBouncePlus/
+ * https://github.com/CheaterMC/LiquidBounce/
  */
 package net.ccbluex.liquidbounce.features.module.modules.movement;
 
@@ -33,12 +33,12 @@ import net.minecraft.util.BlockPos;
 
 import java.awt.Color;
 
-@ModuleInfo(name = "BowJump", spacedName = "Bow Jump", description = "Allows you to jump further with auto bow shoot.", category = ModuleCategory.MOVEMENT)
-public class BowJump extends Module {
+@ModuleInfo(name = "BowFly", spacedName = "Bow Fly", description = "Allows you to jump further with auto bow shoot.", category = ModuleCategory.MOVEMENT)
+public class BowFly extends Module {
 
     private final FloatValue boostValue = new FloatValue("Boost", 4.25F, 0F, 10F);
-    private final FloatValue heightValue = new FloatValue("Height", 0.42F, 0F, 10F);
-    private final FloatValue timerValue = new FloatValue("Timer", 1F, 0.1F, 10F);
+    private final FloatValue heightValue = new FloatValue("Height", 0.42F, 0F, 5F);
+    private final FloatValue timerValue = new FloatValue("Timer", 1F, 0.1F, 5F);
     private final IntegerValue delayBeforeLaunch = new IntegerValue("DelayBeforeArrowLaunch", 1, 1, 20);
 
     private final BoolValue autoDisable = new BoolValue("AutoDisable", true);
@@ -180,7 +180,7 @@ public class BowJump extends Module {
             return "Waiting for damage...";
             case 3:
             case 4:
-            return "Boost!";
+            return "Boost";
             default:
             return "Task completed.";
         }
