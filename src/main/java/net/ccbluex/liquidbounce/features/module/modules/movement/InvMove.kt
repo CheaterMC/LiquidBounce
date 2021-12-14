@@ -1,7 +1,7 @@
 /*
- * LiquidBounce+ Hacked Client
+ * LiquidBounce Hacked Client
  * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge.
- * https://github.com/WYSI-Foundation/LiquidBouncePlus/
+ * https://github.com/CheaterMC/LiquidBounce/
  */
 package net.ccbluex.liquidbounce.features.module.modules.movement
 
@@ -19,11 +19,11 @@ import net.minecraft.client.gui.GuiIngameMenu
 import net.minecraft.client.gui.inventory.GuiContainer
 import net.minecraft.client.settings.GameSettings
 
-@ModuleInfo(name = "GuiMove", spacedName = "Gui Move", description = "Allows you to walk while an inventory is opened.", category = ModuleCategory.MOVEMENT)
-class GuiMove : Module() {
+@ModuleInfo(name = "InvMove", spacedName = "Inv Move", description = "Allows you to walk while an inventory is opened.", category = ModuleCategory.MOVEMENT)
+class InvMove : Module() {
 
     val noDetectableValue = BoolValue("NoDetectable", false)
-    val aacAdditionProValue = BoolValue("AACAdditionPro", false)
+    val aacValue = BoolValue("AAC", false)
     val noMoveClicksValue = BoolValue("NoMoveClicks", false)
 
     @EventTarget
@@ -61,5 +61,5 @@ class GuiMove : Module() {
     }
 
     override val tag: String?
-        get() = if (aacAdditionProValue.get()) "AACAP" else null
+        get() = if (aacValue.get()) "AAC" else null
 }
