@@ -1,7 +1,7 @@
 /*
- * LiquidBounce+ Hacked Client
+ * LiquidBounce Hacked Client
  * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge.
- * https://github.com/WYSI-Foundation/LiquidBouncePlus/
+ * https://github.com/CheaterMC/LiquidBounce/
  */
 package net.ccbluex.liquidbounce.ui.client
 
@@ -51,7 +51,7 @@ class GuiMainMenu : GuiScreen(), GuiYesNoCallback {
             lastAnimTick = System.currentTimeMillis()
             alrUpdate = true
         }
-        val creditInfo = "made by epic group of paster."
+        val creditInfo = "CheaterMC"
         drawBackground(0)
         GL11.glPushMatrix()
         renderSwitchButton()
