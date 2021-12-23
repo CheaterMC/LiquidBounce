@@ -304,7 +304,7 @@ public class Speed extends Module {
 
     @Override
     public String getTag() {
-        return typeValue.get() == "Other" ? otherModeValue.get() : typeValue.get() == "Custom" ? "Custom" : typeValue.get() + ", " + getOnlySingleName();
+        return typeValue.get() == "Other" ? otherModeValue.get() : typeValue.get() == "Verus" ? "Verus" : typeValue.get() == "Custom" ? "Custom" : typeValue.get() + ", " + getOnlySingleName();
     }
 
     private String getOnlySingleName() {
